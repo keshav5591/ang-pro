@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Slider</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link href='src/css/angular-carousel.css' rel='stylesheet' type='text/css'>
+        <link href='https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+        <link href='src/css/demo.css' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+        <div ng-app="myapp">
+			<div ng-controller="CarouselDemoCtrl" id="slides_control" class="mycarousel">
+				<div>
+					<carousel interval="myInterval">
+						<slide ng-repeat="slide in slides" active="slide.active">
+							<img ng-src="{{slide.image}}">
+							<div class="carousel-caption">
+							<div class="slide-inner-wrap-outer">
+							<div class="slide-inner-wrap">
+							<span>{{slide.text}}</span>
+							<h2>{{slide.text1}}</h2>
+							<button class="btn-success">{{slide.text2}}</button>
+							</div>
+							</div>
+							</div>
+						</slide>
+					</carousel>
+				</div>
+			</div>
+		</div>  
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+	
+	
+	
+    <script>
+       angular.module('myapp', ['ui.bootstrap']);
+function CarouselDemoCtrl($scope){
+  $scope.myInterval = 3000;
+  $scope.slides = [
+    {
+      image: 'src/images/slide1.jpg', text: 'GLOBAL / June 13, 2016', text1: 'VMware Again on List of 100 Best Places to Work in IT', text2: 'Learn More'
+    },
+    {
+      image: 'src/images/slide1.jpg', text: 'GLOBAL / June 13, 2016', text1: 'VMware Again on List of 100 Best Places to Work in IT', text2: 'Learn More'
+    },
+    {
+      image: 'src/images/slide1.jpg', text: 'GLOBAL / June 13, 2016', text1: 'VMware Again on List of 100 Best Places to Work in IT', text2: 'Learn More'
+    },
+    {
+      image: 'src/images/slide1.jpg', text: 'GLOBAL / June 13, 2016', text1: 'VMware Again on List of 100 Best Places to Work in IT', text2: 'Learn More'
+    }
+  ];
+}
+    </script>
+    </body>
+</html>
